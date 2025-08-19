@@ -1,0 +1,50 @@
+{
+  "name": "use-after-paint-effect",
+  "version": "0.0.1",
+  "description": "React hook that runs an effect only after at least one paint has occurred. (DOM element is mounted and the first render is complete) Great for starting CSS transitions after first render.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kevin-Shiuan/useAfterPaintEffect.git"
+  },
+  "keywords": [
+    "React",
+    "Hook",
+    "Transition",
+    "Animation"
+  ],
+  "author": "Kevin Shiuan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kevin-Shiuan/useAfterPaintEffect/issues"
+  },
+  "homepage": "https://github.com/Kevin-Shiuan/useAfterPaintEffect#readme",
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^15.0.0",
+    "@types/react": "^18.3.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

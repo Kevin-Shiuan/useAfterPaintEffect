@@ -1,0 +1,10 @@
+/src
+/examples
+/node_modules
+
+.DS_Store
+.prettierrc
+.gitignore
+package-lock.json
+tsup.config.ts
+vite.config.ts

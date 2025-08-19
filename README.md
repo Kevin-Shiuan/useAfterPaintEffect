@@ -15,7 +15,7 @@ When you want to trigger CSS transitions on component mount, you may encounter t
 ```jsx
 // ❌ May not work: element might not be painted yet, so transition won't fire
 function Card() {
-  const cardRef = useRef<HTMLDivElement>(null)
+  const cardRef = useRef < HTMLDivElement > null
 
   useEffect(() => {
     cardRef.current.style.transform = 'translateY(0)'
@@ -45,7 +45,7 @@ function Card() {
 ```jsx
 // ✅ This works perfectly - transition is visible
 function Card() {
-  const cardRef = useRef<HTMLDivElement>(null)
+  const cardRef = useRef < HTMLDivElement > null
 
   useAfterPaintEffect(() => {
     cardRef.current.style.transform = 'translateY(0)'
@@ -147,11 +147,12 @@ npm run build
 
 ## Examples
 
-> The `examples` folder contains a Vite + React scaffold. ⚠️ Not finished yet — but it’s intended as a playground comparing `useEffect` vs `useAfterPaintEffect`. Contributions welcome! 🎉  
+> The `examples` folder contains a Vite + React scaffold. ⚠️ Not finished yet — but it’s intended as a playground comparing `useEffect` vs `useAfterPaintEffect`. Contributions welcome! 🎉
 
 ## Acknowledgments
 
-Special thanks to [marko-knoebl](https://github.com/marko-knoebl) and all the participants in this [React issue](https://github.com/facebook/react/issues/20863), which inspired this hook.  
+Special thanks to [marko-knoebl](https://github.com/marko-knoebl) and all the participants in this [React issue](https://github.com/facebook/react/issues/20863), which inspired this hook.
+
 Extra thanks to [Shiny](https://github.com/shinychang) for the detailed explanation of the browser rendering pipeline, which helped me resolve the problem of missing enter transitions while working at [Phase](https://www.linkedin.com/company/phase-software/).
 
 This package is essentially a clean wrapper around that trick, published for convenience and documentation.
@@ -163,4 +164,3 @@ MIT © [Kevin Shiuan](https://github.com/Kevin-Shiuan)
 ## Contributing
 
 Issues and pull requests are welcome! Please feel free to contribute.
-

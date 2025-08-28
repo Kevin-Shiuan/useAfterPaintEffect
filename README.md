@@ -83,20 +83,6 @@ To ensure that the effect runs after the browser has painted the element, we sta
 5. Browser paints the frame 🎨
 6. Next macrotask runs → our `effect` executes
 
-## API
-
-```typescript
-useAfterPaintEffect(effect: () => void | (() => void), deps: React.DependencyList): void
-```
-
-### Parameters
-
-- **`effect`**: A function that runs after paint. Can optionally return a cleanup function.
-- **`deps`**: Dependency array, same as `useEffect`. The effect re-runs when dependencies change.
-
-> 💡 **Tip:** The implementation is tiny (just a few lines).  
-> Feel free to copy the code directly into your project instead of installing the package if you prefer.
-
 Here’s what `useAfterPaintEffect` does under the hood:
 
 ```jsx
@@ -108,6 +94,21 @@ useEffect(() => {
   })
 }, deps)
 ```
+
+> 💡 **Tip:** The implementation is tiny (just a few lines).  
+> Feel free to copy the code directly into your project instead of installing the package if you prefer.
+
+
+## API
+
+```typescript
+useAfterPaintEffect(effect: () => void | (() => void), deps: React.DependencyList): void
+```
+
+### Parameters
+
+- **`effect`**: A function that runs after paint. Can optionally return a cleanup function.
+- **`deps`**: Dependency array, same as `useEffect`. The effect re-runs when dependencies change.
 
 ## Key Features
 

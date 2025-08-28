@@ -1,6 +1,6 @@
 {
   "name": "use-after-paint-effect",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React hook that runs an effect only after at least one paint has occurred. (DOM element is mounted and the first render is complete) Great for starting CSS transitions after first render.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

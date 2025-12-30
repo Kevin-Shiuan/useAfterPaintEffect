@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { useAfterPaintEffect } from '../../src'
+import { useAfterPaintEffect } from 'use-after-paint-effect'
 
 /**
  * Card that uses useAfterPaintEffect to trigger animation.

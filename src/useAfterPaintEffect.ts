@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react'
-import {
+import { useEffect } from 'react'
+import type {
   AfterPaintCleanup,
   AfterPaintEffect,
   AfterPaintEffectDeps,

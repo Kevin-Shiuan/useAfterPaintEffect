@@ -1,34 +1,47 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { CardWithUseEffect } from './CardWithUseEffect'
+import { CardWithAfterPaint } from './CardWithAfterPaint'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [key, setKey] = useState(0)
+
+  const handleRemount = () => {
+    setKey(prev => prev + 1)
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+    <div className="app">
+      <header className="header">
+        <h1 className="title">
+          <span className="hook-name">useAfterPaintEffect</span> Demo
+        </h1>
+        <p className="subtitle">
+          Comparing CSS transition behavior between <code>useEffect</code> and <code>useAfterPaintEffect</code>
         </p>
+      </header>
+
+      <div className="demo-container" key={key}>
+        <CardWithUseEffect />
+        <CardWithAfterPaint />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+      <button className="remount-button" onClick={handleRemount}>
+        <span className="button-icon">🔄</span>
+        Remount Components
+      </button>
+
+      <footer className="footer">
+        <p>
+          Click <strong>Remount Components</strong> to replay the animations and observe the difference.
+        </p>
+        <p className="hint">
+          The left card (<code>useEffect</code>) may appear without animation because the effect runs before the browser paint.
+          <br />
+          The right card (<code>useAfterPaintEffect</code>) always animates because the effect waits for the paint to complete.
+        </p>
+      </footer>
+    </div>
   )
 }
 

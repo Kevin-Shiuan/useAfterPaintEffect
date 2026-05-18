@@ -148,7 +148,7 @@ npm run build
 
 ## Examples
 
-Check out the [Live Demo](https://use-after-paint-effect.vercel.app/) to see the comparison between `useEffect` and `useAfterPaintEffect` in action.
+Check out the [Live Demo](https://use-after-paint-effect.kevin-shiuan.com/) to see the comparison between `useEffect` and `useAfterPaintEffect` in action.
 
 The `examples` folder contains the source code for the demo, comparing `useEffect` vs `useAfterPaintEffect` side by side. 🎉
 

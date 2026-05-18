@@ -1,14 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Geist:wght@400;500&display=swap');
 
 :root {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
-  font-weight: 400;
+  --ink: #0a0a0a;
+  --ink-soft: #1a1a1a;
+  --muted: #6b6b6b;
+  --faint: #a0a0a0;
+  --hairline: #e6e6e6;
+  --page: #fafaf7;
+  --paper: #fafaf7;
+  --paper-tint: #f0eee5;
+  --accent: #c2410c;
+  --good: #4d6b3a;
+  --bad: #8a3a2a;
 
-  color-scheme: dark;
-  color: rgba(255, 255, 255, 0.92);
-  background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0f0f23 100%);
-  min-height: 100vh;
+  --font-display: 'Instrument Serif', 'Times New Roman', serif;
+  --font-body: 'Geist', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--ink);
+  color-scheme: light;
+  background: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,17 +36,18 @@
 
 body {
   margin: 0;
-  display: flex;
-  justify-content: center;
   min-height: 100vh;
-  padding: 2rem;
+  background:
+    linear-gradient(to bottom, var(--page) 0%, var(--page) 100%),
+    repeating-linear-gradient(
+      to right,
+      transparent 0 calc(100% / 12 - 1px),
+      rgba(0, 0, 0, 0.02) calc(100% / 12 - 1px) calc(100% / 12)
+    );
 }
 
 code {
-  font-family: 'SF Mono', Monaco, Consolas, monospace;
-  font-size: 0.9em;
-  background: rgba(139, 92, 246, 0.15);
-  padding: 0.15em 0.4em;
-  border-radius: 4px;
-  color: #a78bfa;
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  letter-spacing: -0.01em;
 }
